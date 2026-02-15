@@ -1,0 +1,111 @@
+employees=[]
+
+
+def add():
+
+        id=int(input("Enter id number:"))
+        name=(input("Enter your name:"))
+        age=int(input("Enter your age::"))
+        dep=(input("Enter your department:"))
+        
+        
+        employee={
+            'id':id,'|'
+            'name':name,'|'
+            'age':age, '|'
+            'dep':dep, 
+        }
+        
+        employees.append(employee)
+        
+        print("\n_____Employee added successfully! ___\n")
+
+        
+        
+        
+def views():
+    if not employees:
+        print("\n___No employee found!___\n")
+        return
+    print('\n  Employee list  \n')
+    for i in employees:
+        print(i)
+        
+        
+def search():
+    
+        search=int(input("\n__Enter employee id to search:\n"))
+        found=False
+        for emp in employees:
+            if emp['id']==search:
+                print(emp)
+                found=True
+                break
+        if not found:
+                print('\n___Employee not found \n-->:')
+        else:
+            print('\n ___Employee found successfully!___\n')
+    
+        
+        
+            
+def delete():
+    
+        delete=int(input("\n___Enter employee id to delete:___\n"))
+        found=False
+        for emp in employees:
+            if emp['id']==delete:
+                employees.remove(emp)
+                print('\n___Employee deleted successfully!___\n')
+                found=True
+                break
+        if not found:
+                print ('employee not found :')
+   
+            
+            
+def update():
+  
+        update=int(input("Enter your employee id to update:"))
+        found=False
+        for emp in employees:
+            if emp['id']== update:
+                name=input("Enter your new name:")
+                age=int(input("Enter your new age:"))
+                dep=int(input("Enter your new department code:"))
+                emp['name']=name
+                emp['age']=age
+                emp['dep']=dep
+                print('\n____Employee updated successfully!___\n')
+                found=True
+                break
+        if not found:
+                print('\n Employee not found :\n')
+
+            
+            
+choice=0
+while choice !=6:
+    print('1.Add employee ')
+    print ('2.View employee')
+    print ('3.Search employee' )
+    print ('4.Delete employee' )
+    print ('5.Update employee' )
+    print(' 6.Exit')
+    choice=int(input('\n Enter your choice: \n'))
+    if choice==1:
+        add()
+    elif choice==2:
+        views()
+    elif choice==3:
+        search()
+    elif choice==4:
+        delete()
+    elif choice==5:
+        update()
+    elif choice==6:
+        print('\n____Exiting the program. goodbye!____\n')
+    else:
+        print("\n____invalid choice.please try again.____\n")
+                    
+                    
