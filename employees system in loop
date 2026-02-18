@@ -1,0 +1,65 @@
+employees=[]
+
+
+
+while True:
+    print("\n  *Welcome to Employee Management System*")
+    print('1.Add Employee')
+    print('2.view Employee')
+    print('3.Search Employee')
+    print('4.Delete Employee')
+    print('5.Exit')
+    
+    
+    choice=int(input("Enter your choice:"))
+    
+    if choice==1:
+        name=input('Enter Employee Name:')
+        age=int(input('Enter Employee Age:'))
+        department=input('Enter Employee Department:')
+        salary=float(input('Enter Employee salary :'))
+        
+        employee={
+            'name':name,
+            'age':age,
+            'department':department,
+            'salary':salary
+        }
+        employees.append(employee)
+        print('Employee added successfully!')
+        
+    elif choice==2:
+        if not employees:
+            print('No employees Found!')
+        else:
+            print('Employee List:')
+            for i in employees:
+                print(i)
+    elif choice==3:
+        
+        search=input('Enter Employee Name To Search:').strip().lower()
+        found =False
+        
+        for emp in employees:
+            if emp['name'].lower()==search.lower():
+                print(f"Name:{emp['name']},Age:{emp['age']},Department:{emp['department']},Salary:{emp['salary']}")
+                found=True
+                break
+        if not found:
+            print('Employee Not Found!')
+        elif choice==4:
+            delete=input('Enter Employee name to delete:')
+            found=False
+            for emp in employees:
+                if emp['name'].lower()==delete.lower():
+                    employees.remove(emp)
+                    print('Employee Deleted Successfully!')
+                    found=True
+                    break
+                if not found:
+                    print('Employee Not Found!')
+                elif choice==5:
+                    print('Exiting Employee Management System. Goodbye!')
+                    break
+                else:
+                    print('Invalid Choice! Please Try Again.')
