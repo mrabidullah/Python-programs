@@ -1,0 +1,47 @@
+inventory={}
+
+while True:
+    print('\n--INVENTORY SYSTEM---')
+    print('1. Add product')
+    print('2. Discount products')
+    print('3. show All products')
+    print('4. Show Total Stock')
+    print('5. Search Product')
+    print('6. Exit')
+    
+    choice=input('\n--Your Choice:')
+    
+    if choice=='1':
+        name=input('Enter Product Name:')
+        price=float(input('Enter Product Price:'))
+        stock=int(input('Enter Product Stock:'))
+        inventory[name]=[price,stock]
+        print(f'product {name}added successfully')
+        
+    elif choice=='2':
+        discount=float(input('Enter discount percentage:'))
+        for i in inventory:
+            inventory[i][0]*=(1-discount/100)
+            print(f'product{i}discounted successfully')
+            
+    elif choice=='3':
+        for i in inventory:
+            print(i,'price:',inventory[i][0],'stock:',inventory[i][1])
+            
+    elif choice=='4':
+            total=0
+            for i in inventory:
+                total+=inventory[i][1]
+            print('Total stock is :',total)
+    elif choice=='5':
+        search=input('Enter product name to search:')
+        if search in inventory:
+            print('stock of',search,)
+        else:
+            print('product not Found')
+    elif choice=='6':
+            print('Exiting inventory system....')
+            break
+    else:
+            print('invalid choice ,please try again')
+            
