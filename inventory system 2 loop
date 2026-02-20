@@ -1,0 +1,36 @@
+inventory={}
+while True:
+    print("\n1.Add  2.Discount  3.Show  4.Total Stock  5.Search  6.Exit")
+    choice = input("Choose: ")
+
+    if choice == "1":
+        name = input("Name: ")
+        price = float(input("Price: "))
+        stock = int(input("Stock: "))
+        inventory[name] = [price, stock]
+
+    elif choice == "2":
+        d = float(input("Discount %: "))
+        for name in inventory:
+            inventory[name][0] *= (1 - d/100)
+
+    elif choice == "3":
+        for  data in inventory.items():
+            print(data[0],'price:',data[1][0],'stock:',data[1][1])
+
+    elif choice == "4":
+        total = sum(data[1] for data in inventory.values())
+        print("Total Stock:", total)
+
+    elif choice == "5":
+        s = input("Search name: ")
+        if s in inventory:
+            print("Stock:", inventory[s][1])
+        else:
+            print("Not found")
+
+    elif choice == "6":
+        break
+
+    else:
+        print("Invalid choice")
