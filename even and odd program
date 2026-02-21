@@ -1,0 +1,35 @@
+s=int(input('Enter starting number :'))
+e=int(input('Enter ending number :'))
+
+even_nbr=0
+odd_nbr=0
+print('\n** checking Numbers\n')
+
+for i in range(s,e+1):
+    if i%2==0:
+        print(i,'is even number :')
+        even_nbr+=1
+    else:
+        print(i,'is odd number :')
+        odd_nbr+=1
+        
+print(' \n Total even numbers:',even_nbr)
+print(' \n Total odd numbers :',odd_nbr)
+if s % 2==0 and e%2==0:
+    print(' \nboth starting and ending number are even numbers !')
+elif s % 2!=0 and e%2!=0:
+    print('\n both starting and ending number are odd numbers !')
+else:
+    print('\n starting and ending number are different !')
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
