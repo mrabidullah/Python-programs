@@ -1,0 +1,34 @@
+player=100
+enemy=100
+while True:
+    attack=input('attack on enemy or (x to quit) : ')
+    if attack=='x':
+        break
+    a=int(attack)
+    if a<enemy:
+        enemy-=a
+        print(f'you attack on enemy enemy health is {enemy}')
+    else:
+        print(f'you won the match enemy heath is {enemy}')
+        
+    enmy_attack=9
+    if enmy_attack<player:
+        player-=enmy_attack
+        print(f'enemy attack on you your health is {player}')
+    else:
+        print(f'enemy won the match your heath is {player}')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
