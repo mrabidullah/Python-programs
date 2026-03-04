@@ -1,0 +1,31 @@
+num=int(input('Enter any  number : '))
+
+
+total=0
+even=0
+odd=0
+largest=0
+
+tem=num
+while tem >0:
+    digit= tem % 10
+    total +=digit
+    if digit % 2==0:
+        even+=1
+        print('even umber ')
+    else:
+        odd +=1
+        print('odd number ')
+    if digit > largest:
+        largest=digit
+    tem=tem //10
+print('total  digits count ',total)
+print('even digits count ',even)
+print('odd digits count',odd)
+print('largest digits  ',largest)
+
+
+
+
+
+
