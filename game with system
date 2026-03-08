@@ -1,0 +1,31 @@
+import random
+
+attempts=0
+
+while True:
+    computer=random.randint(1,10)
+    me=int(input('Enter your favorite number : '))
+    attempts+=1
+    
+    if me > computer:
+        print('you win dear ',me)
+    elif me < computer:
+        print('computer is win ',computer)
+    elif me == computer:
+        print('tie')
+    else:
+        print('Attempts ',attempts)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
